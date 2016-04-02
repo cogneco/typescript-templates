@@ -1,0 +1,17 @@
+{
+  "name": "stresstester",
+  "description": "Stresstests custom JSON REST API.",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./build/app.js",
+    "prestart": "npm run build",
+    "build": "tsc -p ./source",
+    "prebuild": "npm install && tsd reinstall",
+    "clean": "rm -rf build typings node_modules source/tsd.d.ts"
+  },
+  "dependencies": {
+    "tsd": "^0.6.5",
+    "typescript": "^1.8.9"
+  }
+}
