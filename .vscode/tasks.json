@@ -19,9 +19,18 @@
 	"showOutput": "silent",
 	"tasks": [
 		{
+			"taskName": "setup"
+		},
+		{
 			"taskName": "build",
 			"isBuildCommand": true,
 			"problemMatcher": "$tsc"
+		},
+		{
+			"taskName": "start"
+		},
+		{
+			"taskName": "deploy"
 		},
 		{
 			"taskName": "clean"
