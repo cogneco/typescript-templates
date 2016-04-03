@@ -19,7 +19,7 @@
 			},
 			"externalConsole": false,
 			"sourceMaps": true,
-			"outDir": null
+			"outDir": "${workspaceRoot}/build"
 		},
 		{
 			"name": "Launch",
@@ -39,7 +39,7 @@
 			},
 			"externalConsole": false,
 			"sourceMaps": true,
-			"outDir": null
+			"outDir": "${workspaceRoot}/build"
 		},
 		{
 			"name": "Attach",
