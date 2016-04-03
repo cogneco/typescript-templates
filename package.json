@@ -1,21 +1,21 @@
 {
-  "name": "loadtester",
-  "description": "Load test custom JSON REST API.",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
+	"name": "loadtester",
+	"description": "Load test custom JSON REST API.",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
 		"setup": "npm install",
-    "postinstall": "tsd reinstall",
-    "start": "node ./build/app.js",
-    "prestart": "npm run build",
-    "build": "tsc -p ./source",
-    "predeploy": "npm run build",
-    "deploy": "echo '#!/usr/bin/env node' > build/app && browserify --node build/app.js >> build/app && chmod 755 build/app && sudo cp build/app /usr/local/bin/loadtester",
-    "clean": "rm -rf build typings node_modules source/tsd.d.ts"
-  },
-  "dependencies": {
-    "browserify": "^13.0.0",
-    "tsd": "^0.6.5",
-    "typescript": "^1.8.9"
-  }
+		"postinstall": "tsd reinstall",
+		"start": "node ./build/app.js",
+		"prestart": "npm run build",
+		"build": "tsc -p ./source && echo '#!/usr/bin/env node' > build/app && browserify --node build/app.js >> build/app && chmod 755 build/app",
+		"predeploy": "npm run build",
+		"deploy": "sudo cp build/app /usr/local/bin/loadtester",
+		"clean": "rm -rf build typings node_modules source/tsd.d.ts"
+	},
+	"dependencies": {
+		"browserify": "^13.0.0",
+		"tsd": "^0.6.5",
+		"typescript": "^1.8.9"
+	}
 }

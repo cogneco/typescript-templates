@@ -30,9 +30,6 @@
 			"taskName": "start"
 		},
 		{
-			"taskName": "deploy"
-		},
-		{
 			"taskName": "clean"
 		}
 	]
