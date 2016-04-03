@@ -1,5 +1,4 @@
 /// <reference path="tsd.d.ts" />
-
 export class Timer {
 	private histogram: Histogram
 	private failures: { [index: string]: number } = {}
@@ -9,18 +8,6 @@ export class Timer {
 	private start = Date.now()
 	constructor(divisor?: number) {
 		this.histogram = new Histogram(divisor ? divisor : 10)
-	}
-	getHistogram(): Histogram {
-		return this.histogram
-	}
-	getFailures(): { [index: string]: number } {
-		return this.failures
-	}
-	getSucceded(): number {
-		return this.succeded
-	}
-	getFailed(): number {
-		return this.failed
 	}
 	printStatus() {
 		var end = Date.now()
@@ -55,7 +42,7 @@ export class Timer {
 		})
 	}
 }
-export class Histogram {
+class Histogram {
 	private data = <number[]> []
 	constructor(private divisor: number) {
 	}
