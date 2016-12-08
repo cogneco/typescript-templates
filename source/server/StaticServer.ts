@@ -15,6 +15,6 @@ export default function inject(application: express.Application) {
 		application.use(require('webpack-hot-middleware')(compiler))
 	}
 	else {
-		application.use(/.*/, express.static("./data/client"))		
+		application.use(/.*/, express.static("./build/client"))		
 	}
 }

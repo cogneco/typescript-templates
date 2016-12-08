@@ -27,7 +27,7 @@ const config: webpack.Configuration = {
 	plugins: (development ? [
 		new webpack.optimize.OccurrenceOrderPlugin(false),
 		new webpack.HotModuleReplacementPlugin(),
-		//new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
 	] : [
 		new webpack.optimize.UglifyJsPlugin(),
 		new ExtractTextPlugin("style-[contenthash:10].css"),
