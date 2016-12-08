@@ -1,0 +1,97 @@
+{
+	"version": "0.1.0",
+	"command": "npm",
+	"isShellCommand": true,
+	"showOutput": "always",
+	"suppressTaskName": true,
+	"tasks": [
+		{
+			"taskName": "build",
+			"args": ["run", "build"],
+			"isBuildCommand": true,
+			"problemMatcher": {
+				"owner": "webpack",
+				"severity": "error",
+				"fileLocation": "absolute", 
+				"pattern": [
+					{
+						"regexp": "ERROR in (.*)",	
+						"file" : 1 
+					},
+					{
+						"regexp": "\\((\\d+),(\\d+)\\):(.*)",
+						"line":1,
+						"column": 2,
+						"message": 3
+					}			
+				]
+			}
+		},
+		{
+			"taskName": "build-server",
+			"args": ["run", "build-server"],
+			"problemMatcher": {
+				"owner": "webpack",
+				"severity": "error",
+				"fileLocation": "absolute", 
+				"pattern": [
+					{
+						"regexp": "ERROR in (.*)",	
+						"file" : 1 
+					},
+					{
+						"regexp": "\\((\\d+),(\\d+)\\):(.*)",
+						"line":1,
+						"column": 2,
+						"message": 3
+					}			
+				]
+			}
+		},
+		{
+			"taskName": "build-client",
+			"args": ["run", "build-client"],
+			"problemMatcher": {
+				"owner": "webpack",
+				"severity": "error",
+				"fileLocation": "absolute", 
+				"pattern": [
+					{
+						"regexp": "ERROR in (.*)",	
+						"file" : 1 
+					},
+					{
+						"regexp": "\\((\\d+),(\\d+)\\):(.*)",
+						"line":1,
+						"column": 2,
+						"message": 3
+					}
+				]
+			}
+		},
+		{
+			"taskName": "start",
+			"args": ["run", "start"]
+		},
+		{
+			"taskName": "start-server",
+			"args": ["run", "start-server"]
+		},
+		{
+			"taskName": "start-client",
+			"args": ["run", "start-client"]
+		},
+		{
+			"taskName": "install",
+			"args": ["install"]
+		},
+		{
+			"taskName": "update",
+			"args": ["update"]
+		},
+		{
+			"taskName": "test",
+			"args": ["run", "test"]
+		}
+	]
+}
