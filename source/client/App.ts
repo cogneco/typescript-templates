@@ -1,11 +1,11 @@
 import { UserInterface } from "./UserInterface"
-console.log("App starting.")
+console.info("App starting.")
 const ui = new UserInterface(window.document)
 ui.render()
-console.log("App running.")
+console.info("App running.")
 
 if (development) {
-	if (module["hot"]) {
-		module["hot"].accept();
+	if (module.hot) {
+		module.hot.accept()
 	}
 }

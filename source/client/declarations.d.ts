@@ -1,3 +1,3 @@
 declare var development: boolean
 
-declare type HotModule = { hot: { accept() } }
+declare var module: NodeModule & { hot?: { accept() }}
