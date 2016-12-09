@@ -8,43 +8,81 @@
 		{
 			"taskName": "build",
 			"args": ["run", "build"],
-			"isBuildCommand": true,
-			"problemMatcher": {
+			"problemMatcher": [
+				{
+					"owner": "webpack",
+					"severity": "error",
+					"fileLocation": ["relative", "${workspaceRoot}/source"], 
+					"pattern": [
+						{
+							"regexp": "ERROR in (.*)",	
+							"file" : 1 
+						},
+						{
+							"regexp": "\\((\\d+),(\\d+)\\):(.*)",
+							"line":1,
+							"column": 2,
+							"message": 3
+						}
+					]
+				},
+				{
 				"owner": "webpack",
 				"severity": "error",
-				"fileLocation": "absolute", 
+				"fileLocation": ["relative", "${workspaceRoot}/"], 
 				"pattern": [
 					{
-						"regexp": "ERROR in (.*)",	
-						"file" : 1 
-					},
-					{
-						"regexp": "\\((\\d+),(\\d+)\\):(.*)",
-						"line":1,
-						"column": 2,
-						"message": 3
-					}			
+						"regexp": "(.*)\\(([0-9]+),([0-9]+)\\): (error|warning) (TS[0-9][0-9][0-9][0-9]): (.*).",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"code": 5,
+						"message": 6
+					}
 				]
 			}
+			]
 		},
 		{
 			"taskName": "build-server",
+			"isBuildCommand": true,
 			"args": ["run", "build-server"],
 			"problemMatcher": {
 				"owner": "webpack",
 				"severity": "error",
-				"fileLocation": "absolute", 
+				"fileLocation": ["relative", "${workspaceRoot}/"], 
 				"pattern": [
 					{
-						"regexp": "ERROR in (.*)",	
-						"file" : 1 
-					},
+						"regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(error|warning)\\s+(TS[0-9][0-9][0-9][0-9]):\\s+(.*)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"code": 5,
+						"message": 6
+					}
+				]
+			}
+		},
+		{
+			"taskName": "watch-server",
+			"args": ["run", "watch-server"],
+			"isWatching": true,
+			"problemMatcher": {
+				"owner": "webpack",
+				"severity": "error",
+				"fileLocation": ["relative", "${workspaceRoot}/"], 
+				"pattern": [
 					{
-						"regexp": "\\((\\d+),(\\d+)\\):(.*)",
-						"line":1,
-						"column": 2,
-						"message": 3
-					}			
+						"regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(error|warning)\\s+(TS[0-9][0-9][0-9][0-9]):\\s+(.*)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"code": 5,
+						"message": 6
+					}
 				]
 			}
 		},
@@ -67,6 +105,22 @@
 						"message": 3
 					}
 				]
+			}
+		},
+		{
+			"taskName": "tslint",
+			"args": ["run", "tslint"],
+			"problemMatcher": {
+				"owner": "tslint",
+				"fileLocation": [ "relative", "${workspaceRoot}" ],
+				"severity": "warning",
+				"pattern": {
+					"regexp": "^(\\S.*)\\[(\\d+), (\\d+)\\]:\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"message": 4
+				}
 			}
 		},
 		{
