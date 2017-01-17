@@ -5,7 +5,8 @@ ui.render()
 console.info("App running.")
 
 if (development) {
-	if (module.hot) {
-		module.hot.accept()
+	type HotModule = NodeModule & { hot?: { accept() } }
+	if ((module as HotModule).hot) {
+		(module as HotModule).hot.accept()
 	}
 }
