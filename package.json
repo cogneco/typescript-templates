@@ -1,0 +1,25 @@
+{
+  "name": "typescript-templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^2.1.4"
+  },
+  "devDependencies": {
+    "typescript": "^2.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cogneco/typescript-templates.git"
+  },
+  "author": "Simon Mika",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cogneco/typescript-templates/issues"
+  },
+  "homepage": "https://github.com/cogneco/typescript-templates#readme"
+}
